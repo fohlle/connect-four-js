@@ -18,5 +18,22 @@ class ConnectFour{
       }
     })
 
+    this.make_id();
+
+  }
+  //
+  make_id(){
+    let count = 0;
+    const cells = [...document.querySelectorAll(".cell")]
+    const columns = [...document.querySelectorAll(".columns")]
+
+
+    for(let i = 0; i < 6; i++){
+      for(let j = 0; j < 7; j++){
+        columns[j].childNodes[i].setAttribute("id",count)
+        count++;
+      }
+    }
+
   }
 }

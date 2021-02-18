@@ -8,7 +8,7 @@ html,body{
 
 #container{
   display:grid;
-  grid-template-columns: repeat(7,50px);
+  grid-template-columns: repeat(7,70px);
   justify-content: center;
   align-items: center;
   height:700px;
@@ -17,12 +17,12 @@ html,body{
 }
 
 .columns{
-  border:black solid 1px;
   display:grid;
-  grid-template-columns: 50px;
-  grid-template-rows: repeat(6,50px);
+  grid-template-rows: repeat(6,70px);
 }
 
 .cell{
   border:black solid 1px;
+  background-color:darkseagreen;
+
 }
