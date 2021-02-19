@@ -4,8 +4,6 @@ class ConnectFour{
   constructor(){
     this.player_one = true;
     this.winning_array = this.make_win();
-    this.green_winner = false;
-    this.blue_winner = false;
   }
 
   make_win(){
@@ -52,6 +50,7 @@ class ConnectFour{
 
     this.make_id();
     this.adding_event(columns);
+    this.reset_btn();
     
   }
   //
@@ -115,13 +114,32 @@ class ConnectFour{
           tester.push("")
         }
       })
-      if(tester.every( (name) => name === "green")){console.log("win green")}
-      if(tester.every( (name) =>  name === "blue")){console.log("win blue")}
+      if(tester.every( (name) => name === "green")){this.game_over("green")}
+      if(tester.every( (name) =>  name === "blue")){this.game_over("blue")}
       tester = [];
     })
   }
   //
   game_over(winner_name){
-    
+    const add_winner_para = document.getElementById("winner");
+    add_winner_para.innerText = `Winner is ${winner_name}`;
+    setTimeout( () => {
+      const end_screen = document.getElementById("overlay").style.width = "100%";  
+    },250)
+  }
+  //
+  reset_btn(){
+    const reset_btn = document.getElementById("btn");
+    let cells = document.querySelectorAll(".cell")
+
+    reset_btn.addEventListener("click", () => {
+      const end_screen = document.getElementById("overlay").style.width = "0%";
+      this.player_one = true;
+      cells.forEach( (n) => {
+        if(n.childNodes.length === 1){
+          n.removeChild(n.firstChild)
+        }
+      })
+    })
   }
 }
