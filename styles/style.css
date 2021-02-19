@@ -42,3 +42,34 @@ html,body{
 #green{
   background-color: rgba(124, 252, 0,0.4);
 }
+
+/*
+Overlay
+*/
+
+#overlay{
+  height:100%;
+  position:fixed;
+  z-index:1;
+  background-color: rgba(0,0,0,0.9);
+  overflow-x: hidden;
+  width:0%;
+  left:0;
+  top:0;
+}
+#content{
+  width:100%;
+  position: relative;
+  top:25%;
+  text-align: center;
+}
+
+#btn{
+  font-size: 36px;
+  
+}
+
+#winner{
+  font-size: 36px;
+  color: #818181;
+}

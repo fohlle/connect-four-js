@@ -4,6 +4,8 @@ class ConnectFour{
   constructor(){
     this.player_one = true;
     this.winning_array = this.make_win();
+    this.green_winner = false;
+    this.blue_winner = false;
   }
 
   make_win(){
@@ -117,5 +119,9 @@ class ConnectFour{
       if(tester.every( (name) =>  name === "blue")){console.log("win blue")}
       tester = [];
     })
+  }
+  //
+  game_over(winner_name){
+    
   }
 }
