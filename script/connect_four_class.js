@@ -50,6 +50,7 @@ class ConnectFour{
 
     this.make_id();
     this.adding_event(columns);
+    
   }
   //
   make_id(){
@@ -70,10 +71,8 @@ class ConnectFour{
 
     column_array.forEach( (col) => {
       col.addEventListener("click", (e) => {
-        let node = e.target.parentNode.childNodes;
-        if(node.length === 1){
-          node = e.target.parentNode.parentNode.childNodes
-        }
+        let node = col.childNodes
+        
         let num = 5;
        
         while(node[0].childNodes.length === 0){
